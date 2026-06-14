@@ -1,0 +1,119 @@
+{
+  "sample_size": 3000,
+  "node_count": 9683,
+  "edge_count": 7457,
+  "question_type_counts": {
+    "compositional": 1236,
+    "comparison": 711,
+    "inference": 378,
+    "bridge_comparison": 675
+  },
+  "cluster_counts": {
+    "creative_work": 2005,
+    "person_family": 1402,
+    "time": 547,
+    "location": 3333,
+    "other": 112,
+    "organization": 58
+  },
+  "top_relations": [
+    {
+      "relation": "director",
+      "count": 1834
+    },
+    {
+      "relation": "date of birth",
+      "count": 1193
+    },
+    {
+      "relation": "father",
+      "count": 758
+    },
+    {
+      "relation": "date of death",
+      "count": 614
+    },
+    {
+      "relation": "country of citizenship",
+      "count": 518
+    },
+    {
+      "relation": "publication date",
+      "count": 512
+    },
+    {
+      "relation": "place of birth",
+      "count": 403
+    },
+    {
+      "relation": "mother",
+      "count": 301
+    },
+    {
+      "relation": "spouse",
+      "count": 300
+    },
+    {
+      "relation": "place of death",
+      "count": 225
+    },
+    {
+      "relation": "country of origin",
+      "count": 179
+    },
+    {
+      "relation": "country",
+      "count": 141
+    }
+  ],
+  "top_entities": [
+    {
+      "entity": "American",
+      "degree": 205
+    },
+    {
+      "entity": "British",
+      "degree": 81
+    },
+    {
+      "entity": "French",
+      "degree": 49
+    },
+    {
+      "entity": "United States",
+      "degree": 42
+    },
+    {
+      "entity": "Italian",
+      "degree": 42
+    },
+    {
+      "entity": "German",
+      "degree": 37
+    },
+    {
+      "entity": "Canadian",
+      "degree": 31
+    },
+    {
+      "entity": "New York",
+      "degree": 30
+    },
+    {
+      "entity": "2011",
+      "degree": 25
+    },
+    {
+      "entity": "Canada",
+      "degree": 19
+    },
+    {
+      "entity": "America",
+      "degree": 17
+    },
+    {
+      "entity": "Australia",
+      "degree": 17
+    }
+  ]
+}

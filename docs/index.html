@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Multi-hop QA Knowledge Explorer</title>
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">2WikiMultihopQA · Knowledge Graph Explorer</p>
+        <h1>多跳问答知识检索与可视化系统</h1>
+      </div>
+      <div class="metrics" aria-label="dataset metrics">
+        <div><strong id="metricQuestions">0</strong><span>问题样本</span></div>
+        <div><strong id="metricNodes">0</strong><span>实体节点</span></div>
+        <div><strong id="metricEdges">0</strong><span>关系边</span></div>
+      </div>
+    </header>
+
+    <main class="app-shell">
+      <aside class="sidebar">
+        <section class="panel chat-panel">
+          <div class="panel-title">
+            <h2>自然语言查询</h2>
+            <span>QA</span>
+          </div>
+          <div id="chatMessages" class="chat-messages">
+            <div class="chat-message assistant">
+              <strong>系统</strong>
+              <p>输入英文多跳问题，系统会检索相似样本，并返回答案与推理链。</p>
+            </div>
+          </div>
+          <div class="chat-input-row">
+            <input id="chatInput" type="text" placeholder="例如：Who is the mother of the director..." />
+            <button id="chatButton" class="icon-button" type="button" title="提问" aria-label="提问">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 19V5"></path>
+                <path d="m5 12 7-7 7 7"></path>
+              </svg>
+            </button>
+          </div>
+        </section>
+
+        <section class="panel">
+          <label for="searchInput">查询 / 检索</label>
+          <div class="search-row">
+            <input id="searchInput" type="search" placeholder="输入问题、答案、实体或关系" />
+            <button id="searchButton" class="icon-button" type="button" title="搜索" aria-label="搜索">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="11" cy="11" r="7"></circle>
+                <path d="m16.5 16.5 4 4"></path>
+              </svg>
+            </button>
+          </div>
+          <div class="filter-row">
+            <select id="typeFilter" aria-label="问题类型筛选">
+              <option value="all">全部问题类型</option>
+            </select>
+            <select id="clusterFilter" aria-label="关系聚类筛选">
+              <option value="all">全部关系聚类</option>
+            </select>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-title">
+            <h2>检索结果</h2>
+            <span id="resultCount">0</span>
+          </div>
+          <div id="resultList" class="result-list"></div>
+        </section>
+      </aside>
+
+      <section class="workspace">
+        <section class="visual-panel">
+          <div class="panel-title">
+            <h2>多跳关系图</h2>
+            <span id="graphHint">选择一条问题查看推理链</span>
+          </div>
+          <svg id="graphSvg" viewBox="0 0 900 520" role="img" aria-label="multi-hop graph"></svg>
+        </section>
+
+        <section class="details-grid">
+          <article class="detail-panel">
+            <div class="panel-title">
+              <h2>推理链</h2>
+              <span id="selectedType">-</span>
+            </div>
+            <h3 id="selectedQuestion">请选择一条结果</h3>
+            <p id="selectedAnswer" class="answer"></p>
+            <ol id="chainList" class="chain-list"></ol>
+          </article>
+
+          <article class="detail-panel">
+            <div class="panel-title">
+              <h2>证据上下文</h2>
+              <span id="supportCount">0</span>
+            </div>
+            <div id="contextList" class="context-list"></div>
+          </article>
+        </section>
+      </section>
+
+      <aside class="insights">
+        <section class="panel">
+          <div class="panel-title">
+            <h2>问题类型聚类</h2>
+          </div>
+          <div id="typeChart" class="bar-chart"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-title">
+            <h2>关系语义聚类</h2>
+          </div>
+          <div id="clusterChart" class="bar-chart"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-title">
+            <h2>高频关系</h2>
+          </div>
+          <div id="relationList" class="tag-list"></div>
+        </section>
+      </aside>
+    </main>
+
+    <script src="src/main.js"></script>
+  </body>
+</html>

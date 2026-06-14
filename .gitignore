@@ -1,0 +1,10 @@
+datasets/
+registry_backup_zip_assoc/
+*.parquet
+*.db
+*.sqlite
+*.sqlite3
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
