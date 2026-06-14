@@ -4,6 +4,9 @@ registry_backup_zip_assoc/
 *.db
 *.sqlite
 *.sqlite3
+*.docx
+render_tmp/
+docx_render_check/
 __pycache__/
 .ipynb_checkpoints/
 .DS_Store
